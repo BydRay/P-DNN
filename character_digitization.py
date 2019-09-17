@@ -4,8 +4,10 @@ import csv
 
 def character_digitization():
 
-    source_file = 'corrected'
-    handled_file = 'testing_dataset.csv'
+    source_file = 'kddcup.data_10_percent_corrected'
+    handled_file = 'training_dataset.csv'
+    # source_file = 'corrected'
+    # handled_file = 'testing_dataset.csv'
 
     data_file = open(handled_file, 'w', newline='')
     with open(source_file, 'r') as data_source:
