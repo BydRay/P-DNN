@@ -4,6 +4,7 @@ import numpy as np
 from sklearn.metrics import classification_report
 from sklearn.metrics import confusion_matrix
 
+LEARNING_RATE_first_fit = 0.001
 
 
 testdata_original = pd.read_csv('testing_dataset.csv', header=None)
@@ -34,7 +35,7 @@ model = tf.keras.models.Sequential([
     tf.keras.layers.Dense(5, activation=tf.nn.softmax)    # 这里使用 softmax 函数作为激活函数，因为我们想要找到预测结果的概率分布。（使用 reLU 得到的数字并没有这个意义）
 
 ])
-model.compile(optimizer=tf.train.AdamOptimizer(learning_rate=0.001), loss='categorical_crossentropy', metrics=['accuracy'])
+model.compile(optimizer=tf.train.AdamOptimizer(learning_rate=LEARNING_RATE_first_fit), loss='categorical_crossentropy', metrics=['accuracy'])
 
 file_path = 'best_modle.h5'
 model.load_weights(file_path)
