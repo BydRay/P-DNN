@@ -1,3 +1,3 @@
 # P-DNN
 
-P-DNN: A method of intrusion detection using deep neural network with pruning
+P-DNN: An Effective Intrusion Detection Method based on Pruning Deep Neural Network

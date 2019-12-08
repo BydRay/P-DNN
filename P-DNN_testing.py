@@ -32,7 +32,7 @@ model = tf.keras.models.Sequential([
     tf.keras.layers.Dropout(0.5),
     tf.keras.layers.Dense(32, activation=tf.nn.relu),
     tf.keras.layers.Dropout(0.5),
-    tf.keras.layers.Dense(5, activation=tf.nn.softmax)    # 这里使用 softmax 函数作为激活函数，因为我们想要找到预测结果的概率分布。（使用 reLU 得到的数字并没有这个意义）
+    tf.keras.layers.Dense(5, activation=tf.nn.softmax)
 
 ])
 model.compile(optimizer=tf.train.AdamOptimizer(learning_rate=LEARNING_RATE_first_fit), loss='categorical_crossentropy', metrics=['accuracy'])
@@ -42,7 +42,7 @@ model.load_weights(file_path)
 
 predict_y = model.predict(x_test)
 y_predict_label = []
-row_max = np.max(predict_y, axis=1).tolist()  # 每行最大
+row_max = np.max(predict_y, axis=1).tolist()
 for i in range(len(row_max)):
     y_predict_label.append(np.where(predict_y[i] == row_max[i])[0][0])
 predict_y_label = np.array(y_predict_label)
