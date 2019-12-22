@@ -2,4 +2,4 @@
 
 P-DNN: An Effective Intrusion Detection Method based on Pruning Deep Neural Network
 
-We will submit the remaining relevant code after the paper is accepted.
+We will submit the remaining relevant codes after the paper is accepted.
